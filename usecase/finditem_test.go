@@ -13,9 +13,9 @@ func TestFindItem_SearchItemByID(t *testing.T) {
 		itemID domain.ItemID
 	}
 	tests := []struct {
-		name   string
-		args   args
-		want   *FindItemDto
+		name string
+		args args
+		want *FindItemDto
 	}{
 		// cases.
 		{"item ID 1", args{domain.ItemID(1)}, &FindItemDto{&domain.Item{1}}},
@@ -40,7 +40,6 @@ type itemRepositoryMock struct {
 func (r *itemRepositoryMock) ResolveByID(context context.Context, itemID domain.ItemID) *domain.Item {
 	return &domain.Item{ID: itemID}
 }
-
 
 func newItemRepositoryMock() repository.IItemRepository {
 	return &itemRepositoryMock{}
