@@ -4,7 +4,7 @@ type: docker
 name: default
 
 steps:
-  - name: usecase_test
+  - name: test
     image: golang
     commands:
-      - go test ...
+      - go test drone-test/...
